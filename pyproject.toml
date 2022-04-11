@@ -46,3 +46,5 @@ build-backend = "poetry.core.masonry.api"
 [tool.poetry.plugins."oarepo.models"]
 validity = "oarepo_loose_validation_builder.builtin_models:validity.json"
 
+[tool.poetry.plugins."oarepo_model_builder.property_preprocessors"]
+900-validity = "oarepo_loose_validation_builder.property_preprocessors.validity:ValidityPreprocessor"
