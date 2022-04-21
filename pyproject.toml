@@ -1,6 +1,6 @@
 [tool.poetry]
 name = "oarepo-loose-validation-builder"
-version = "0.0.1"
+version = "0.0.2"
 description = ""
 authors = ["Alzbeta Pokorna <alzbeta.pokorna@cesnet.cz>"]
 readme = "README.md"
@@ -38,6 +38,9 @@ build-backend = "poetry.core.masonry.api"
 
 [tool.poetry.plugins."oarepo_model_builder.builders"]
 0901-invenio_validity_component = "oarepo_loose_validation_builder.invenio.invenio_validity_component:InvenioRecordSearchOptionsBuilderMultilingual"
+0902-invenio_validation_marshmallow_imports = "oarepo_loose_validation_builder.invenio.invenio_validation_marshmallow_imports:InvenioValidationMarshmallowImports"
+
+1101-invenio_validation_poetry = "oarepo_loose_validation_builder.invenio.invenio_validation_poetry:InvenioValidationPoetryBuilder"
 
 
 [tool.poetry.plugins."oarepo_model_builder.model_preprocessors"]
@@ -48,3 +51,6 @@ validity = "oarepo_loose_validation_builder.builtin_models:validity.json"
 
 [tool.poetry.plugins."oarepo_model_builder.property_preprocessors"]
 900-validity = "oarepo_loose_validation_builder.property_preprocessors.validity:ValidityPreprocessor"
+
+[tool.poetry.plugins."oarepo.model_schemas"]
+errors = "oarepo_loose_validation_builder:errors.json5"
